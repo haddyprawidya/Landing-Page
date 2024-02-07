@@ -1,0 +1,239 @@
+:root {
+  --backgroud: #eeedeb;
+  --primary: #e0ccbe;
+  --secondary: #747264;
+  --text: #3c3633;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--backgroud);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+#header {
+  background-color: var(--secondary);
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+#header div {
+  margin: auto;
+  max-width: 1440px;
+  height: 5rem;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header-img {
+  width: 350px;
+  object-fit: cover;
+  margin-right: 3rem;
+}
+#nav-bar {
+  width: 800px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#nav-bar a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--primary);
+  transition: 0.5s;
+}
+#nav-bar a:hover {
+  color: var(--backgroud);
+}
+#nav-bar a::after {
+  content: "";
+  width: 0%;
+  display: block;
+  visibility: hidden;
+  transition: 0.5s;
+  margin-top: 3px;
+  outline: 1px solid var(--text);
+}
+#nav-bar a:hover::after {
+  visibility: visible;
+  width: 100%;
+}
+
+#main {
+  margin: 5rem auto;
+  max-width: 1440px;
+}
+#hero {
+  text-align: center;
+  padding-top: 3rem;
+}
+#form input[type="email"] {
+  display: block;
+  width: 250px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  margin: 2rem auto 1.5rem;
+}
+#form input[type="submit"] {
+  display: block;
+  padding: 10px 15px;
+  width: 150px;
+  border-radius: 8px;
+  border: none;
+  margin: 0 auto;
+  background-color: var(--secondary);
+  color: var(--backgroud);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#form input[type="submit"]:hover,
+.pricing-container button:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+#features {
+  max-width: 1000px;
+  padding: 5rem 1.5rem 0;
+  margin: auto;
+}
+.feature-container {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+}
+.feature-container i {
+  font-size: 3rem;
+  min-width: 65px;
+  text-align: center;
+  margin: 15px 40px 15px 0;
+  color: var(--secondary);
+}
+
+#how-it-works {
+  padding-top: 6rem;
+}
+
+#how-it-works iframe {
+  display: block;
+  margin: auto;
+}
+
+#pricing {
+  padding-top: 6rem;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+#pricing::after {
+  content: "";
+  width: 300px;
+}
+.pricing-container {
+  width: 300px;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pricing-title {
+  background-color: var(--primary);
+  padding: 10px 0;
+  font-size: 1.2rem;
+}
+.pricing-price {
+  padding: 20px;
+  font-size: 1.8rem;
+}
+.pricing-text {
+  margin: 10px;
+}
+.pricing-container button {
+  margin: 20px;
+  padding: 8px 30px;
+  background-color: var(--secondary);
+  color: var(--backgroud);
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+}
+#footer {
+  max-width: 1440px;
+  margin: auto;
+  background-color: var(--secondary);
+}
+#footer div {
+  width: 270px;
+  margin-left: auto;
+  padding-block: 20px;
+}
+#footer ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+}
+#footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+#footer a:hover {
+  color: var(--backgroud);
+}
+#footer p {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  #header-img {
+    width: 280px;
+  }
+  #features {
+    padding-inline: 3rem;
+  }
+  #pricing {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  #header div {
+    display: block;
+    text-align: center;
+  }
+  #nav-bar {
+    width: 100%;
+  }
+  #features {
+    padding-inline: 1.5rem;
+  }
+  #features article {
+    text-align: justify;
+  }
+
+  #how-it-works {
+    padding-inline: 1rem;
+  }
+  #how-it-works iframe {
+    width: 100%;
+    height: max-content;
+  }
+}
